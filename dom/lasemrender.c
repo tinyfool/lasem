@@ -23,7 +23,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <lsm.h>
-#include <lsmmathml.h>
+/*#include <lsmmathml.h>*/
+#include <lsmdomparser.h>
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <glib/gprintf.h>
@@ -158,12 +159,12 @@ int main(int argc, char **argv)
 		document = lsm_dom_document_new_from_url (input_filename,
 							  NULL);
 		if (document == NULL) {
-			document = LSM_DOM_DOCUMENT (lsm_mathml_document_new_from_itex_path (input_filename,
-											     NULL));
-			if (document == NULL) {
-				document = LSM_DOM_DOCUMENT (lsm_mathml_document_new_from_itex_url (input_filename,
-												    NULL));
-			}
+/*                        document = LSM_DOM_DOCUMENT (lsm_mathml_document_new_from_itex_path (input_filename,*/
+/*                                                                                             NULL));*/
+/*                        if (document == NULL) {*/
+/*                                document = LSM_DOM_DOCUMENT (lsm_mathml_document_new_from_itex_url (input_filename,*/
+/*                                                                                                    NULL));*/
+/*                        }*/
 		}
 	}
 

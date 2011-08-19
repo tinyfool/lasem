@@ -31,7 +31,8 @@
 #include <unistd.h>
 #endif
 
-#include <lsmmathml.h>
+/*#include <lsmmathml.h>*/
+#include <lsmdom.h>
 #include <glib.h>
 #include <gio/gio.h>
 

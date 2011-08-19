@@ -54,7 +54,7 @@ AM_CONDITIONAL([BUILD_GTK_DOC], [test "x$enable_gtk_doc" = "xyes" || test ! -f "
 AC_CONFIG_FILES([
 Makefile
 itex2mml/Makefile
-src/Makefile
+dom/Makefile
 tests/Makefile
 po/Makefile.in
 docs/Makefile

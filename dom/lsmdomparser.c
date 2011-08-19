@@ -23,9 +23,10 @@
 #include <lsmdebug.h>
 #include <lsmdomimplementation.h>
 #include <lsmdomnode.h>
-#include <lsmmathmlpresentationtoken.h>
-#include <lsmmathmlentitydictionary.h>
-#include <lsmsvgtextelement.h>
+#include <lsmdomelement.h>
+/*#include <lsmmathmlpresentationtoken.h>*/
+/*#include <lsmmathmlentitydictionary.h>*/
+/*#include <lsmsvgtextelement.h>*/
 #include <lsmstr.h>
 #include <libxml/parser.h>
 #include <gio/gio.h>
@@ -163,27 +164,28 @@ lsm_dom_parser_get_entity (void *user_data, const xmlChar *name)
 {
 	LsmDomSaxParserState *state = user_data;
 	xmlEntity *entity;
-	const char *utf8;
+/*        const char *utf8;*/
 
 	entity = g_hash_table_lookup (state->entities, name);
 	if (entity != NULL)
 		return entity;
 
-	utf8 = lsm_mathml_entity_get_utf8 ((char *) name);
-	if (utf8 != NULL) {
+	/* FIXME */
+/*        utf8 = lsm_mathml_entity_get_utf8 ((char *) name);*/
+/*        if (utf8 != NULL) {*/
 
-		entity = g_new0 (xmlEntity, 1);
+/*                entity = g_new0 (xmlEntity, 1);*/
 
-		entity->type = XML_ENTITY_DECL;
-		entity->name = (xmlChar *) xmlMemStrdup ((const char *) name);
-		entity->content = (xmlChar *) xmlMemStrdup (utf8);
-		entity->length = strlen (utf8);
-		entity->etype = XML_INTERNAL_PREDEFINED_ENTITY;
+/*                entity->type = XML_ENTITY_DECL;*/
+/*                entity->name = (xmlChar *) xmlMemStrdup ((const char *) name);*/
+/*                entity->content = (xmlChar *) xmlMemStrdup (utf8);*/
+/*                entity->length = strlen (utf8);*/
+/*                entity->etype = XML_INTERNAL_PREDEFINED_ENTITY;*/
 
-		g_hash_table_insert (state->entities, (char *) name, entity);
+/*                g_hash_table_insert (state->entities, (char *) name, entity);*/
 
-		return entity;
-	}
+/*                return entity;*/
+/*        }*/
 
 	return xmlGetPredefinedEntity(name);
 }

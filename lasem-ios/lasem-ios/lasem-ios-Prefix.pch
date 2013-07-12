@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'lasem-ios' target in the 'lasem-ios' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
